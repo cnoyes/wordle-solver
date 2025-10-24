@@ -1,0 +1,60 @@
+# R
+.Rhistory
+.RData
+.Rapp.history
+*.Rproj.user/
+*.Rproj
+
+# Session Data files
+.RData
+.RDataTmp
+
+# User-specific files
+.Ruserdata
+
+# RStudio files
+.Rproj.user/
+
+# produced vignettes
+vignettes/*.html
+vignettes/*.pdf
+
+# OAuth2 token
+.httr-oauth
+
+# knitr and R markdown default cache directories
+*_cache/
+/cache/
+
+# Temporary files created by R markdown
+*.utf8.md
+*.knit.md
+
+# R Environment Variables
+.Renviron
+
+# renv
+renv/library/
+renv/local/
+renv/staging/
+
+# pkgdown site
+docs/
+
+# Data (customize as needed)
+data/raw/*
+data/processed/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+
+# Output
+output/*.png
+output/*.pdf
+!output/.gitkeep
+
+# macOS
+.DS_Store
+
+# IDEs
+.vscode/
+.idea/

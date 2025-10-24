@@ -1,0 +1,28 @@
+---
+title: "Example Report"
+author: "Your Name"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(dplyr)
+library(ggplot2)
+```
+
+## Introduction
+
+This is an example R Markdown report.
+
+```{r example}
+# Example code
+data <- data.frame(
+  x = 1:10,
+  y = rnorm(10)
+)
+
+ggplot(data, aes(x, y)) +
+  geom_point() +
+  theme_minimal()
+```
