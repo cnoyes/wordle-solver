@@ -34,7 +34,7 @@ This file provides **mandatory instructions** to Claude Code (claude.ai/code) wh
 
 ### Algorithm Highlights
 
-1. **Exhaustive search**: Evaluates all ~12,972 possible guesses against all ~2,315 possible answers
+1. **Exhaustive search**: Evaluates all ~12,970 possible guesses against all ~2,314 possible answers
 2. **Recursive tree building**: Constructs 6-turn decision tree (turns 2-6 branch from turn 1 outcomes)
 3. **Smart scoring**: Penalizes guesses that leave many possibilities in worst case
 4. **Tie-breaking**: Prefers words from answer list when scores are equal
@@ -103,7 +103,7 @@ R -e "install.packages(c('dplyr', 'tidyr', 'httr', 'grid', 'gridExtra', 'testtha
   ↓
 02_build_strategy.R (18-30 min)
   ↓
-  Turn 1: Calculates best opening guess (all 12,972 guesses vs 2,315 answers)
+  Turn 1: Calculates best opening guess (all 12,970 guesses vs 2,314 answers)
   Turn 2-6: For each outcome branch, calculates optimal next guess
   Assembles complete lookup table (strategy.RDS)
   ↓
@@ -157,8 +157,8 @@ play_wordle.R
 ```
 data/
 ├── raw/                    # Downloaded word lists
-│   ├── answer_words.txt   # 2,315 possible solutions
-│   └── guess_words.txt    # 12,972 valid guesses
+│   ├── answer_words.txt   # 2,314 possible solutions
+│   └── guess_words.txt    # 12,970 valid guesses
 ├── processed/              # Transformed data structures
 │   ├── answer_words.RDS
 │   ├── guess_words.RDS
@@ -229,9 +229,9 @@ Generates ~1,500 boolean vectors:
 ### Computational Complexity
 
 **Turn 1**:
-- 12,972 guesses × 2,315 answers = 30,030,780 combinations
+- 12,970 guesses × 2,314 answers = 30,008,580 combinations
 - Group by outcome pattern (~250 unique patterns per guess)
-- Score ~12,972 guesses
+- Score ~12,970 guesses
 
 **Turn 2-6**:
 - For each branch, repeat with filtered word lists

@@ -262,7 +262,7 @@ wordle-solver/
 **Problem**: Which word should you guess first?
 
 **Approach**:
-- Evaluate all **12,972 valid guesses** against all **2,315 possible answers**
+- Evaluate all **12,970 valid guesses** against all **2,314 possible answers**
 - For each guess, simulate all possible color outcomes
 - Score each guess by how well it splits the answer space
 - Result: Opening guess that minimizes worst-case remaining possibilities
@@ -308,7 +308,7 @@ g_e_greater_1 <- c(TRUE, TRUE, ...)   # Words with at least 1 'e'
 
 | Turn | Combinations | Time |
 |------|-------------|------|
-| 1 | 12,972 × 2,315 = ~30M | ~5 min |
+| 1 | 12,970 × 2,314 = ~30M | ~5 min |
 | 2-6 | Branching (~250 branches/turn) | ~15-25 min |
 | **Total** | **~30 million evaluations** | **18-30 min** |
 
