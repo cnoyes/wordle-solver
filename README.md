@@ -49,7 +49,7 @@ All 132 Turn 1 outcomes are displayed in an easy-to-browse, searchable grid.
 
 This project includes **two comprehensive PDF visualizations** that map out the entire solution space:
 
-### 🎯 Turn 1 Cheat Sheet ([Download](legacy/output_data/Wordle%20Cheat%20Sheet.pdf))
+### 🎯 Turn 1 Cheat Sheet ([Download](output/turn1_cheat_sheet.pdf))
 
 **What it shows:** All 132 possible color outcomes after guessing "RAISE"
 
@@ -67,7 +67,7 @@ For each outcome pattern, it displays:
 - 102 possible words remain
 - Optimal next guess: "OUTED"
 
-### 🗺️ Complete Game Paths ([Download](legacy/output_data/Wordle%20Outcomes.pdf))
+### 🗺️ Complete Game Paths ([Download](output/Wordle%20Outcomes.pdf))
 
 **What it shows:** Complete game sequences from start to finish
 
