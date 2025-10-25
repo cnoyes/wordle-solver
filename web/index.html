@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wordle Solver - Interactive Cheat Sheet</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎯 Wordle Solver</h1>
+            <p class="subtitle">Interactive Optimal Strategy Cheat Sheet</p>
+        </header>
+
+        <main>
+            <!-- Instructions -->
+            <section class="instructions">
+                <h2>📖 How to Use This Cheat Sheet</h2>
+                <div class="steps">
+                    <div class="step">
+                        <span class="step-number">1</span>
+                        <div class="step-content">
+                            <strong>Start with the optimal opening guess</strong>
+                            <p>Enter <strong class="highlight">RAISE</strong> in Wordle</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <span class="step-number">2</span>
+                        <div class="step-content">
+                            <strong>Look at the color feedback</strong>
+                            <p>Wordle shows you which letters are correct (🟩), present (🟨), or absent (⬜)</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <span class="step-number">3</span>
+                        <div class="step-content">
+                            <strong>Find your pattern below</strong>
+                            <p>Scroll to match your exact color sequence</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <span class="step-number">4</span>
+                        <div class="step-content">
+                            <strong>Use the second guess shown</strong>
+                            <p>The card displays your optimal next word to enter in Wordle</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Color Legend -->
+            <section class="legend">
+                <h3>Color Guide</h3>
+                <div class="legend-items">
+                    <div class="legend-item">
+                        <span class="tile correct">A</span>
+                        <span>Correct position (green)</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="tile present">A</span>
+                        <span>Wrong position (yellow)</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="tile absent">A</span>
+                        <span>Not in word (gray)</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Filter Controls -->
+            <section class="controls">
+                <div class="control-group">
+                    <label for="search">🔍 Quick find your pattern:</label>
+                    <input type="text" id="search" placeholder="Search by letters (e.g., 'raise') or second guess (e.g., 'about')...">
+                </div>
+                <div class="control-group">
+                    <label for="sort">📊 Sort by:</label>
+                    <select id="sort">
+                        <option value="pattern">Pattern (default)</option>
+                        <option value="remaining">Fewest remaining words</option>
+                        <option value="remaining-desc">Most remaining words</option>
+                    </select>
+                </div>
+                <div class="stats-summary" id="stats">
+                    <span id="showing-count">Showing 0 of 0 patterns</span>
+                </div>
+            </section>
+
+            <!-- Results Table -->
+            <section class="results" id="results">
+                <div class="loading">Loading cheat sheet data...</div>
+            </section>
+        </main>
+
+        <footer>
+            <p>
+                <strong>About:</strong> This solver uses exhaustive game tree exploration
+                to compute the mathematically optimal guess for every game state.
+            </p>
+            <p>
+                <a href="https://github.com/cnoyes/wordle-solver" target="_blank">View on GitHub</a>
+                | Created during COVID-19 lockdown
+            </p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

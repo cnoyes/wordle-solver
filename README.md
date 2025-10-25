@@ -13,6 +13,7 @@ Unlike real-time Wordle solvers that calculate moves on-the-fly, this solver **e
 
 ### Key Features
 
+- ✅ **Interactive web cheat sheet** - Beautiful, searchable interface for finding optimal guesses
 - ✅ **Pre-computed optimal strategy** for all 2,314 possible Wordle answers
 - ✅ **Minimax-inspired scoring** that minimizes worst-case outcomes
 - ✅ **Complete decision tree** covering all 6 turns
@@ -22,7 +23,29 @@ Unlike real-time Wordle solvers that calculate moves on-the-fly, this solver **e
 
 ---
 
-## 📖 Visual Cheat Sheets (PDF)
+## 🌐 Interactive Web Cheat Sheet
+
+**[Try the Interactive Cheat Sheet](https://cnoyes.github.io/wordle-solver/)** (GitHub Pages)
+
+The best way to use this solver is through the **interactive web interface**:
+
+- 🎨 **Wordle-style design** with familiar green/yellow/gray colors
+- 🔍 **Live search** - Type any letter pattern or guess to filter results
+- 📊 **Sortable** - Order by fewest/most remaining words
+- 💡 **Clear instructions** - Step-by-step guide for first-time users
+- 📱 **Mobile-friendly** - Works on any device
+
+**How to use:**
+1. Visit the interactive cheat sheet (or open `web/index.html` locally)
+2. Guess "RAISE" in Wordle
+3. Find your color pattern in the cheat sheet
+4. See the optimal next guess instantly!
+
+All 132 Turn 1 outcomes are displayed in an easy-to-browse, searchable grid.
+
+---
+
+## 📖 Downloadable PDF Cheat Sheets
 
 This project includes **two comprehensive PDF visualizations** that map out the entire solution space:
 
