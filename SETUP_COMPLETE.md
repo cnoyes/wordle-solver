@@ -15,22 +15,24 @@ Your Wordle solver is now **ready to use**!
 **Status**: ✅ 2,314 answer words + 10,656 guess words loaded
 
 ### 2. Strategy Data ✅
-**Problem**: Strategy tree takes 18-30 minutes to build
+**Problem**: Legacy strategy tree was incomplete (54.3% coverage)
 
 **Solution**:
-- Copied your pre-computed legacy strategy files to `data/derived/`
-- You can skip the long computation step
+- Rebuilt complete strategy tree from scratch (~20 minutes)
+- Generated fresh files: best_guess.RDS (2.3MB), optimal_strategy.RDS (76KB), strategy.RDS (115KB)
+- Results.RDS (303MB) contains raw computation for all 6 turns
 
-**Status**: ✅ Complete strategy tree ready to use
+**Status**: ✅ Complete strategy tree with 100% coverage (verified with "tuber")
 
 ### 3. Interactive CLI ✅
-**Problem**: Column naming mismatch between new scripts and legacy data
+**Problem**: Script required interactive terminal input (R console vs Rscript)
 
 **Solution**:
-- Fixed `play_wordle.R` to work with your legacy data structure
-- Opening guess: **RAISE**
+- Created `play_wordle_interactive.R` that requires R console
+- Fixed data structure references to work with rebuilt strategy
+- Opening guess: **RAISE** (optimal based on exhaustive search)
 
-**Status**: ✅ Ready to play!
+**Status**: ✅ Ready to play! (Use R console, not Rscript)
 
 ---
 
@@ -38,9 +40,15 @@ Your Wordle solver is now **ready to use**!
 
 ### Play Wordle with Optimal Suggestions
 
+**Interactive R Console (Recommended):**
 ```bash
 cd ~/code/wordle-solver
-Rscript scripts/play_wordle.R
+R
+```
+
+Then in the R console:
+```r
+source('scripts/play_wordle_interactive.R')
 ```
 
 **What happens**:
@@ -48,6 +56,8 @@ Rscript scripts/play_wordle.R
 2. You enter colors (g/y/r) for each position
 3. Gets next optimal guess
 4. Repeat until solved!
+
+See `HOW_TO_RUN.md` for detailed instructions.
 
 ### Example Session
 
