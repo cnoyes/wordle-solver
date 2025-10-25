@@ -58,3 +58,4 @@ output/*.pdf
 # IDEs
 .vscode/
 .idea/
+data/derived/results.RDS
