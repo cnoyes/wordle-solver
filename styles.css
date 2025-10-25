@@ -1,0 +1,354 @@
+/* Wordle Solver - Interactive Cheat Sheet Styles */
+
+:root {
+    --color-correct: #6aaa64;
+    --color-present: #c9b458;
+    --color-absent: #787c7e;
+    --color-bg: #ffffff;
+    --color-text: #1a1a1b;
+    --color-border: #d3d6da;
+    --color-key-bg: #d3d6da;
+    --color-highlight: #6aaa64;
+    --color-link: #0066cc;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color-correct: #538d4e;
+        --color-present: #b59f3b;
+        --color-absent: #3a3a3c;
+        --color-bg: #121213;
+        --color-text: #ffffff;
+        --color-border: #3a3a3c;
+        --color-key-bg: #818384;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Clear Sans', 'Helvetica Neue', Arial, sans-serif;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    padding: 20px 0 40px;
+    border-bottom: 1px solid var(--color-border);
+    margin-bottom: 30px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    color: var(--color-absent);
+    font-size: 1.1rem;
+}
+
+/* Instructions Section */
+.instructions {
+    background: linear-gradient(135deg, rgba(106, 170, 100, 0.1), rgba(201, 180, 88, 0.1));
+    border-radius: 12px;
+    padding: 30px;
+    margin-bottom: 30px;
+    border: 2px solid var(--color-border);
+}
+
+.instructions h2 {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+.steps {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.step {
+    display: flex;
+    gap: 15px;
+    align-items: start;
+}
+
+.step-number {
+    background: var(--color-highlight);
+    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.step-content strong {
+    display: block;
+    margin-bottom: 4px;
+}
+
+.step-content p {
+    font-size: 0.95rem;
+    color: var(--color-absent);
+}
+
+.highlight {
+    color: var(--color-highlight);
+    font-weight: bold;
+    font-size: 1.1em;
+    letter-spacing: 0.5px;
+}
+
+/* Legend */
+.legend {
+    margin-bottom: 30px;
+}
+
+.legend h3 {
+    margin-bottom: 12px;
+    font-size: 1.2rem;
+}
+
+.legend-items {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Wordle Tiles */
+.tile {
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 4px;
+    color: white;
+    text-transform: uppercase;
+}
+
+.tile.correct {
+    background-color: var(--color-correct);
+}
+
+.tile.present {
+    background-color: var(--color-present);
+}
+
+.tile.absent {
+    background-color: var(--color-absent);
+}
+
+/* Controls */
+.controls {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    align-items: end;
+    padding: 20px;
+    background: rgba(211, 214, 218, 0.1);
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.control-group {
+    flex: 1;
+    min-width: 200px;
+}
+
+.control-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.control-group input,
+.control-group select {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid var(--color-border);
+    border-radius: 6px;
+    font-size: 1rem;
+    background: var(--color-bg);
+    color: var(--color-text);
+}
+
+.control-group input:focus,
+.control-group select:focus {
+    outline: none;
+    border-color: var(--color-highlight);
+}
+
+.stats-summary {
+    padding: 10px 0;
+    font-weight: 600;
+    color: var(--color-absent);
+}
+
+/* Results Section */
+.results {
+    min-height: 400px;
+}
+
+.loading {
+    text-align: center;
+    padding: 60px 20px;
+    font-size: 1.2rem;
+    color: var(--color-absent);
+}
+
+.outcome-grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.outcome-card {
+    border: 2px solid var(--color-border);
+    border-radius: 8px;
+    padding: 20px;
+    background: var(--color-bg);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.outcome-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.pattern {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 15px;
+    justify-content: center;
+}
+
+.pattern .tile {
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+}
+
+.outcome-info {
+    text-align: center;
+}
+
+.outcome-info .next-guess-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--color-highlight);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+.outcome-info .next-guess {
+    font-size: 1.8rem;
+    font-weight: bold;
+    padding: 16px 20px;
+    background: var(--color-highlight);
+    color: white;
+    border-radius: 8px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 8px rgba(106, 170, 100, 0.3);
+}
+
+.outcome-info .stat {
+    font-size: 0.85rem;
+    color: var(--color-absent);
+    margin-bottom: 8px;
+}
+
+.outcome-info .additional-stats {
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid var(--color-border);
+    font-size: 0.85rem;
+    color: var(--color-absent);
+}
+
+.no-results {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--color-absent);
+}
+
+.no-results h3 {
+    margin-bottom: 10px;
+}
+
+/* Footer */
+footer {
+    margin-top: 60px;
+    padding-top: 30px;
+    border-top: 1px solid var(--color-border);
+    text-align: center;
+    color: var(--color-absent);
+    font-size: 0.9rem;
+}
+
+footer p {
+    margin-bottom: 8px;
+}
+
+footer a {
+    color: var(--color-link);
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    .instructions {
+        padding: 20px;
+    }
+
+    .steps {
+        grid-template-columns: 1fr;
+    }
+
+    .controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .outcome-grid {
+        grid-template-columns: 1fr;
+    }
+}
