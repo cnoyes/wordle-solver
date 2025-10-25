@@ -22,6 +22,46 @@ Unlike real-time Wordle solvers that calculate moves on-the-fly, this solver **e
 
 ---
 
+## 📖 Visual Cheat Sheets (PDF)
+
+This project includes **two comprehensive PDF visualizations** that map out the entire solution space:
+
+### 🎯 Turn 1 Cheat Sheet ([Download](legacy/output_data/Wordle%20Cheat%20Sheet.pdf))
+
+**What it shows:** All 132 possible color outcomes after guessing "RAISE"
+
+For each outcome pattern, it displays:
+- 🟩🟨⬜ **Color-coded letters** showing the feedback
+- 🔢 **Remaining words** - How many solutions are still possible
+- 💡 **Optimal next guess** - The mathematically best second guess
+
+**How to use it:**
+1. Guess "RAISE" in Wordle
+2. Look up your color pattern in the cheat sheet
+3. See exactly what to guess next and how many words remain!
+
+**Example:** If you get ⬜🟨🟩⬜⬜ (gray R, yellow A, green I, gray S, gray E):
+- 102 possible words remain
+- Optimal next guess: "OUTED"
+
+### 🗺️ Complete Game Paths ([Download](legacy/output_data/Wordle%20Outcomes.pdf))
+
+**What it shows:** Complete game sequences from start to finish
+
+This PDF visualizes **all possible paths through the game tree**, showing:
+- Each guess and its color feedback across all turns
+- The progression from opening guess to solution
+- Visual representation mimicking the actual Wordle grid
+
+**How to use it:**
+- Study optimal game paths
+- Understand decision trees visually
+- See how the solver narrows down possibilities turn by turn
+
+**Note:** This is a large PDF (many pages) showing the exhaustive game tree!
+
+---
+
 ## 📊 Algorithm Overview
 
 ### The Core Idea

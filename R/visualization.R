@@ -82,7 +82,7 @@ print_cheat_sheet <- function(optimal_strategy,
   # Save to PDF
   message("Creating cheat sheet PDF: ", output_file)
   pdf(output_file, paper = 'a4', height = 11, width = 8.5)
-  do.call("gridExtra::grid.arrange", c(plot_list, ncol = table_num - 1))
+  do.call(gridExtra::grid.arrange, c(plot_list, ncol = table_num - 1))
   dev.off()
 
   message("Cheat sheet saved successfully")
